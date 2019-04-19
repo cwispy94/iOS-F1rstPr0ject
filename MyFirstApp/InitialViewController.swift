@@ -7,18 +7,22 @@
 //
 
 import UIKit
+import AudioToolbox
 
 class InitialViewController: UIViewController {
     @IBOutlet var vibrationButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        vibrationButton.setTitle("Click Me", for: UIControl.State.normal)
 
         // Do any additional setup after loading the view.
     }
     
 
+    @IBAction func onClick(_ sender: Any) {
+        AudioServicesPlayAlertSound(kSystemSoundID_Vibrate)
+    }
     /*
     // MARK: - Navigation
 
